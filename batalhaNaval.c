@@ -1,5 +1,14 @@
 #include <stdio.h>
 
+void exibirMatriz(int matriz[5][5]) {
+    for (int i = 0; i < 5; i++) {
+        for (int j = 0; j < 5; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
 int main() {
     // Declaração do tabuleiro 10x10
     int tabuleiro[10][10] = {0};
@@ -55,6 +64,43 @@ int main() {
         }
         printf("\n");
     }
+
+    // Habilidade em cone
+    int cone[5][5] = { 
+        {0, 0, 1, 0, 0},
+        {0, 1, 1, 1, 0},
+        {1, 1, 1, 1, 1},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    // Habilidade em cruz
+    int cruz[5][5] = { 
+        {0, 0, 1, 0, 0},
+        {1, 1, 1, 1, 1},
+        {0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    // Habilidade em octaedro
+    int octaedro[5][5] = { 
+        {0, 0, 1, 0, 0},
+        {0, 1, 1, 1, 0},
+        {0, 0, 1, 0, 0},
+        {0, 0, 0, 0, 0},
+        {0, 0, 0, 0, 0}
+    };
+
+    // Exibição das habilidades
+    printf("Habilidade em cone:\n");
+    exibirMatriz(cone);
+
+    printf("\nHabilidade em cruz:\n");
+    exibirMatriz(cruz);
+
+    printf("\nHabilidade em octaedro:\n");
+    exibirMatriz(octaedro);
 
     return 0;
 }
